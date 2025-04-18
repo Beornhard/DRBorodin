@@ -287,6 +287,10 @@
             createSparkles();
             setTimeout(createSparkles, 1000);
             setTimeout(createSparkles, 1500);
+
+            // Добавляем звуковой эффект (если нужно)
+            const audio = new Audio('https://www.soundjay.com/misc/sounds/magic-chime-01.mp3');
+            audio.play().catch(e => console.log("Автовоспроизведение звука заблокировано"));
         };
     </script>
 </body>
