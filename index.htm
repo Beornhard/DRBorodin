@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения, Виктор!</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background: linear-gradient(135deg, #ffcce6, #ccf2ff);
+            margin: 0;
+            padding: 0;
+            color: #5a2d82;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: #d40078;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.5em;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            margin-bottom: 40px;
+            border: 2px solid gold;
+        }
+        
+        .card:before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px dashed #d40078;
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .message {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2em;
+            color: #d40078;
+            margin-top: 30px;
+        }
+        
+        .decoration {
+            position: absolute;
+            font-size: 2em;
+            opacity: 0.7;
+        }
+        
+        .crown {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4em;
+            color: gold;
+            text-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+        
+        .prince-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid gold;
+            box-shadow: 0 0 20px rgba(255,215,0,0.7);
+            margin: 20px auto;
+            display: block;
+            background: #fff;
+        }
+        
+        .placeholder-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ffcce6, #ccf2ff);
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: #d40078;
+            border: 5px solid gold;
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: gold;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+            opacity: 0;
+        }
+        
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+        
+        .gift-box {
+            width: 100px;
+            height: 100px;
+            background: #d40078;
+            margin: 30px auto;
+            position: relative;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: gold;
+            font-size: 2em;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+        
+        .gift-box:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: gold;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            border-left: 5px solid gold;
+        }
+        
+        .castle {
+            font-size: 5em;
+            margin: 20px 0;
+            color: #d40078;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #d40078, #ff66b3);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(212,0,120,0.3);
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212,0,120,0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .footer {
+            margin-top: 50px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="crown">👑</div>
+        <h1>Виктор Бородин</h1>
+        <div class="subtitle">Королевское поздравление с Днём Рождения!</div>
+        
+        <div class="card">
+            <div class="decoration" style="top: 10px; left: 10px;">✨</div>
+            <div class="decoration" style="top: 10px; right: 10px;">🌸</div>
+            <div class="decoration" style="bottom: 10px; left: 10px;">🌹</div>
+            <div class="decoration" style="bottom: 10px; right: 10px;">🎀</div>
+            
+            <div class="castle">🏰</div>
+            
+            <div class="placeholder-img">VB</div>
+            
+            <div class="message">
+                <p>Дорогой Виктор,</p>
+                <p>В этот волшебный день королевство сердечно поздравляет тебя с Днём Рождения! 🎉</p>
+                <p>Пусть твой год будет наполнен королевскими успехами, принцессоподобной удачей и рыцарскими подвигами! Ты - настоящий принц и у тебя есть дракон), и мы желаем тебе всего самого сказочного!</p>
+                <p>Пусть сбываются все твои мечты, как в доброй сказке, а каждый день приносит новые радости и свершения. Пусть твой путь будет усыпан лепестками роз, а дракон на твоём пути превращается в верную жену!</p>
+            </div>
+            
+            <div class="gift-box" onclick="document.getElementById('hidden-gift').style.display='block'">🎁</div>
+            
+            <div id="hidden-gift" class="hidden-message">
+                <p>Твой королевский подарок - безграничное счастье, крепкое здоровье, ЖЕНДОС! и исполнение всех желаний! И конечно, вечное избавление от скучных совещаний и нудных отчетов! 😉</p>
+            </div>
+            
+            <button class="btn" onclick="createSparkles()">Осыпать конфетти</button>
+            
+            <div class="signature">С любовью, ваши верные родственники Казуркины))</div>
+        </div>
+        
+        <div class="footer">
+            Создано с магией и волшебством специально для Виктора Бородина
+        </div>
+    </div>
+    
+    <script>
+        function createSparkles() {
+            // Создаем 50 искорок
+            for (let i = 0; i < 50; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                // Рандомное положение
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                const size = Math.random() * 10 + 5;
+                const delay = Math.random() * 2;
+                
+                sparkle.style.left = `${x}px`;
+                sparkle.style.top = `${y}px`;
+                sparkle.style.width = `${size}px`;
+                sparkle.style.height = `${size}px`;
+                sparkle.style.animationDelay = `${delay}s`;
+                
+                // Разные цвета
+                const colors = ['gold', '#d40078', '#ff66b3', '#66ccff'];
+                sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                document.body.appendChild(sparkle);
+                
+                // Удаляем через 2 секунды
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 2000);
+            }
+            
+            // Добавляем звуковой эффект (если нужно)
+            const audio = new Audio('https://www.soundjay.com/misc/sounds/magic-chime-01.mp3');
+            audio.play().catch(e => console.log("Автовоспроизведение звука заблокировано"));
+        }
+        
+        // Создаем несколько искорок при загрузке
+        window.onload = function() {
+            createSparkles();
+            setTimeout(createSparkles, 1000);
+            setTimeout(createSparkles, 1500);
+        };
+    </script>
+</body>
+</html>
